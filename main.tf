@@ -33,9 +33,12 @@ resource "aws_route_table" "mtc_public_rt" {
   tags = {
     name = "dev_public_rt"
   }
-  route {
-    cidr_block = "10.123.2.0/24"
+}
+
+  resource "aws_route" "default_route" {
+    route_table_id = aws_route_table.mtc_public_rt.id
+    destination_cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.mtc_internet_gateway.id
   }
-}
+
 
