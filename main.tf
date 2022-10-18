@@ -52,11 +52,11 @@ resource "aws_security_group" "mtc_sg" {
   vpc_id      = aws_vpc.mtc_vpc.id
 
   ingress {
-    from_port        = 0
-    to_port          = 0
-    protocol         = "-1"
-    cidr_blocks      = ["0.0.0.0/0"]
-    
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+
   }
 
   egress {
@@ -71,11 +71,11 @@ resource "aws_security_group" "mtc_sg" {
   }
 
   resource "mtc_key_pair" "dev" {
-  key_name   = "dev-key"
-  public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFlkdF0GwGCyiNXClqdGRGGLYpCRF2WnLgfRg749smTB robertrosario@Roberts-Mac-mini.local"
+    key_name   = "dev-key"
+    public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFlkdF0GwGCyiNXClqdGRGGLYpCRF2WnLgfRg749smTB robertrosario@Roberts-Mac-mini.local"
 
-  tags = {
-    name = "dev_kp"
+    tags = {
+      name = "dev_kp"
+    }
   }
-}
 }
