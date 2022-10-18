@@ -69,4 +69,13 @@ resource "aws_security_group" "mtc_sg" {
   tags = {
     Name = "dev_sg"
   }
+
+  resource "mtc_key_pair" "dev" {
+  key_name   = "dev-key"
+  public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFlkdF0GwGCyiNXClqdGRGGLYpCRF2WnLgfRg749smTB robertrosario@Roberts-Mac-mini.local"
+
+  tags = {
+    name = "dev_kp"
+  }
+}
 }
