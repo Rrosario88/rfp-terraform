@@ -70,8 +70,8 @@ resource "aws_security_group" "mtc_sg" {
     Name = "dev_sg"
   }
 
-  resource "mtc_key_pair" "dev" {
-    key_name   = "dev-key"
+  resource "aws_key_pair" "mtc_auth" {
+    key_name   = "mtckey"
     public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFlkdF0GwGCyiNXClqdGRGGLYpCRF2WnLgfRg749smTB robertrosario@Roberts-Mac-mini.local"
 
     tags = {
