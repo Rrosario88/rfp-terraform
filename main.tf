@@ -72,7 +72,7 @@ resource "aws_security_group" "mtc_sg" {
 }
   resource "aws_key_pair" "mtc_auth" {
     key_name   = "mtckey"
-    public_key = file("~/rfp-terraform/mtckey.pub")
+    public_key = file("~/.ssh/mtckey.pub")
     
     #("ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFlkdF0GwGCyiNXClqdGRGGLYpCRF2WnLgfRg749smTB robertrosario@Roberts-Mac-mini.local")
 
